@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  },
+  "name": "logsbot",
+  "version": "1.0.0",
+  "description": "Code for create a bot with logs",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LUCAIM08/LogsBot.git"
+  },
+  "author": "ItsLuca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LUCAIM08/LogsBot/issues"
+  },
+  "homepage": "https://github.com/LUCAIM08/LogsBot#readme"
+}
