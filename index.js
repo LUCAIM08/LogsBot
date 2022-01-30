@@ -11,7 +11,7 @@ client.once("ready", () => {
 
 //message detect
 client.on("message", message => {
-    if(message.author.bot) return;
+    if(message.author.id === config.botId) return;
     var embed = new Discord.MessageEmbed()
     .setColor("#5211c2")
     .setTitle("New message sent!")
@@ -69,7 +69,20 @@ client.on("messageDelete", message => {
 //channel-create detect
 client.on("channelCreate", channel => {
     var embed = new Discord.MessageEmbed()
-    .setColor("#000000")
+    .setColor("#548922")
+    .setTitle("Channel created!")
+    .setDescription(`A channel just got created!`)
+    .setThumbnail(client.user.displayAvatarURL())
+    .addField("Details", `No more details`, true)
+    .setTimestamp()
+
+    client.channels.cache.get(config.LogsChannel).send(embed)
+})
+
+//channel-deleted detect
+client.on("channelDelete", channel => {
+    var embed = new Discord.MessageEmbed()
+    .setColor("#548922")
     .setTitle("Channel created!")
     .setDescription(`A channel just got created!`)
     .setThumbnail(client.user.displayAvatarURL())
