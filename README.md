@@ -7,5 +7,8 @@ Run
 Run
 `npm init`
 
+Run
+`npm i discord-reply`
+
 And then complete the questions and
 <b> INSERT THE CODE AND ADJUST TOKEN, IDs and other!
