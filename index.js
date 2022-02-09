@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const config = require("./config.json")
 
+require('discord-reply');
 const client = new Discord.Client({
     intents: 32767
 })
@@ -90,6 +91,25 @@ client.on("channelDelete", channel => {
     .setTimestamp()
 
     client.channels.cache.get(config.LogsChannel).send(embed)
+})
+
+//call-staff command
+client.on("message", message => {
+    if(message.content.startsWith("l!callstaff")) {
+        if(message.author.id === config.botId) return;
+    var embed = new Discord.MessageEmbed()
+    .setColor("#5211c2")
+    .setTitle("[CALL] - STAFF")
+    .setDescription(`Channel type: **${message.channel.type}**`)
+    .setThumbnail(message.author.displayAvatarURL())
+    .addField("Channel", `<#${message.channel.id}>`, true)
+    .addField("User", `${message.author.username}#${message.author.discriminator}`, false)
+    .setTimestamp()
+    
+    client.channels.cache.get(config.LogsChannel).send(`<@&${config.staffId}>`)
+    client.channels.cache.get(config.LogsChannel).send(embed)
+    message.lineReply('You called staff correctly!') //Reply without mention
+    }
 })
 
 client.login(config.token);
