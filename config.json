@@ -2,5 +2,6 @@
     "token": "Insert a token",
     "LogsChannel": "932221392945041448",
     "ownerId": "554389950083235840",
-    "botId": "Add your bot id here"
+    "botId": "Add your bot id here",
+    "staffId": "Add your staff role id here"
 }
