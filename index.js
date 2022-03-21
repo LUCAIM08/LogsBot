@@ -11,7 +11,7 @@ client.once("ready", () => {
 })
 
 //message detect
-client.on("message", message => {
+client.on("messageCreate", message => {
     if(message.author.id === config.botId) return;
     var embed = new Discord.MessageEmbed()
     .setColor("#5211c2")
@@ -94,7 +94,7 @@ client.on("channelDelete", channel => {
 })
 
 //call-staff command
-client.on("message", message => {
+client.on("messageCreate", message => {
     if(message.content.startsWith("l!callstaff")) {
         if(message.author.id === config.botId) return;
     var embed = new Discord.MessageEmbed()
