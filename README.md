@@ -2,7 +2,7 @@
 Code for a Discord bot about logs!
 
 Run 
-`npm i discord.js@12.5.x`
+`npm i discord.js`
 
 Run
 `npm init`
